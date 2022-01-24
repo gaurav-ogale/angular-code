@@ -1,0 +1,14 @@
+<div class="backdrop">
+    <h4 class="text text-center text-primary"> Login Form</h4>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <form [formGroup]="authForm" (ngSubmit)="validateUser()">
+                <label for="name">Enter Name : </label>
+                <input type="text" name="name" id="name" class="form-control" formControlName="name">
+
+                <br>
+                <button class="btn btn-primary" [disabled]="authForm.invalid">Take Me To Vaccine Module</button>
+            </form>
+        </div>
+    </div>
+</div>

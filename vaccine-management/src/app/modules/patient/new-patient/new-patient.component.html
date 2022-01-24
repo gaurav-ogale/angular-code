@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-3 ">
+        <div class="card">
+            <div class="card-header">Register Patient</div>
+            <div class="card-body">
+                <button class="btn btn-block btn-dark" (click)="showPatientData=false;showRegistrationForm=!showRegistrationForm;showPatientLogin=false">Register Patient</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-3 ">
+        <div class="card">
+            <div class="card-header">Show Patient Details</div>
+            <div class="card-body">
+                <button class="btn btn-block btn-dark" (click)="showPatientData=!showPatientData;showRegistrationForm=false;showPatientLogin=false">Show Patient</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-3 " *ngIf="showPatientDiv">
+
+        <div class="card">
+            <div class="card-header">Check if your name Exits?</div>
+            <div class="card-body">
+                <button class="btn btn-block btn-dark" (click)="showPatientLogin=!showPatientLogin;showPatientData=false;showRegistrationForm=false">Show Patient</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <app-patient-details *ngIf="showPatientData"></app-patient-details>
+        <app-register-patient *ngIf="showRegistrationForm"></app-register-patient>
+    </div>
+    <div class="col-3">
+        <!-- <app-patient *ngIf="showPatientLogin" (noteSelectEvent)="setShowPatient($event)"></app-patient> -->
+        <app-patient *ngIf="showPatientLogin" (noteSelectEvent)="showPatientDiv=!showPatientDiv"></app-patient>
+    </div>
+</div>

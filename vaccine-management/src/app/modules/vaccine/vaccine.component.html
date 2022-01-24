@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-3">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-text">Add Vaccination Details</div>
+            </div>
+            <div class="card-body">
+                <div class="card-body">
+                    <button class="btn btn-dark btn-block" (click)="showScheduleVaccine=!showScheduleVaccine;showVaccineDetails=false">Add Vaccination Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-text">Patients Vaccine Details</div>
+            </div>
+            <div class="card-body">
+                <div class="card-body">
+                    <button class="btn btn-dark btn-block" (click)="showVaccineDetails=!showVaccineDetails;showScheduleVaccine=false">Get Vaccination Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <app-schedule-vaccine *ngIf="showScheduleVaccine"></app-schedule-vaccine>
+        <app-vaccine-details [patients]="patients" [vaccines]="vaccines" *ngIf="showVaccineDetails"></app-vaccine-details>
+    </div>
+</div>

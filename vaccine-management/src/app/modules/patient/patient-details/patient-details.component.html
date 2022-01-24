@@ -1,0 +1,15 @@
+<div class="table-responsive">
+    <table class="table table-hover ">
+        <thead>
+            <tr>
+                <th *ngFor="let fields of patientFields">{{fields | uppercase}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let patient of patients">
+                <td *ngFor="let fields of patientFields">{{patient[fields]}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
