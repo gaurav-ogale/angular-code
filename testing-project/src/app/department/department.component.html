@@ -1,0 +1,29 @@
+<p>department works!</p>
+
+<fieldset>
+    <legend>Add Department</legend>
+    Dept Name : <input type="text" [(ngModel)]="deptName" /> <br/><br/> Dept No : <input type="number" [(ngModel)]="deptNo" /> <br/><br/> Location : <input type="text" [(ngModel)]="location" /> <br/><br/>
+    <input type="button" value="addDepartment" (click)="addDepartment()" />
+</fieldset>
+<br>
+<p>{{resultMsg}}</p>
+
+<hr>
+
+<table style="border: 1px solid;">
+    <tbody>
+        <div>
+            <tr>
+                <td>Name</td>
+                <td>Number</td>
+                <td>Location</td>
+            </tr>
+            <tr *ngFor="let department of departments">
+                <td>{{department.name}}</td>
+                <td>{{department.no}}</td>
+                <td>{{department.loc}}</td>
+            </tr>
+        </div>
+
+    </tbody>
+</table>

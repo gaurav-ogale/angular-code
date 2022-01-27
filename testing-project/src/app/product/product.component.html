@@ -1,0 +1,7 @@
+<fieldset>
+    <legend>User Login</legend>
+    Product Name : <input type="text" [(ngModel)]="productName" /> <br/><br/> Unit Price : <input type="number" [(ngModel)]="price" /> <br/><br/> Quantity : <input type="number" [(ngModel)]="quantity" /> <br/><br/>
+    <input type="button" value="total" (click)="getTotalAmount()" />
+    <br/>
+    <p> {{resultMsg}} </p>
+</fieldset>
